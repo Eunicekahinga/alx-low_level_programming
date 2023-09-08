@@ -7,7 +7,9 @@
   */
 int main(void)
 {
-	int h, i;
+	int h, i, j;
+
+	j = 00
 
 	h = i = '0';
 
@@ -15,6 +17,7 @@ int main(void)
 	{
 		for (i = '0'; i <= '9'; i++)
 		{
+			putchar(j' ');
 			putchar(h);
 			putchar(i);
 
