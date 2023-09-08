@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
-  * main - Printing combination of three numbers with the smaller ones preceding
+  * main - Print combination of three numbers with the smaller ones preceding
   *
   * Return: Always (Success)
   */
