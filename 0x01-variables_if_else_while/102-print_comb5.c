@@ -7,7 +7,7 @@
   */
 int main(void)
 {
-	int c, i, j;
+	int c, i;
 
 	c = j = i = '0';
 
@@ -18,13 +18,17 @@ int main(void)
 			putchar(c);
 			putchar(i);
 			putchar(' ');
-			putchar(j);
-			putchar(j);
 
-			if ((c != '9') || (c == '9' && i != '9'))
+			for (j = '0'; j <= '9'; j++)
 			{
-				putchar(',');
-				putchar(' ');
+				putchar(i);
+				putchar(j);
+
+				if ((c != '9') || (c == '9' && i != '9'))
+				{
+					putchar(',');
+					putchar(' ');
+				}
 			}
 		}
 	}
