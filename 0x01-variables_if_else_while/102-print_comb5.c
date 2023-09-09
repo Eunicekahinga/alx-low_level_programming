@@ -17,15 +17,15 @@ int main(void)
 		{
 			putchar(c);
 			putchar(i);
-			putchar(' ');
-
-			for (j = '0'; j <= '9'; j++)
+			
+			if (i > '0' && c > '0');
 			{
-				putchar(i);
+				putchar(' ');
+				putchar(j);
 				putchar(j);
 
-				if (!((c == '9' && i == '9') && j == '9'))
-				{
+				if ((c != '9') || (c == '9' && i != '9'))
+				{	
 					putchar(',');
 					putchar(' ');
 				}
