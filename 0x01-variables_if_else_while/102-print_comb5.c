@@ -15,17 +15,21 @@ int main(void)
         {
                 for (i = 0; i <= 99; i++)
                 {
-                        putchar((j / 10) + '0');
-                        putchar((j % 10) + '0');
-                        putchar(' ');
-                        putchar((i / 10) + '0');
-                        putchar((i % 10) + '0');
+			if (j < i && j != i)
+			{
+                        	putchar((j / 10) + '0');
+                        	putchar((j % 10) + '0');
+                        	putchar(' ');
+                        	putchar((i / 10) + '0');
+                        	putchar((i % 10) + '0');
 
-                        if ((j != 98) && i != 99))
-                        {
-                                putchar(',');
-                                putchar(' ');
-                        }
+                        	if ((j != 98) && i != 99))
+                        	{	
+					break;
+				}
+				putchar(',');
+				putchar(' ');
+			}
                 }
         }
 
