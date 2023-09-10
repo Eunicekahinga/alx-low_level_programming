@@ -24,7 +24,7 @@ int main(void)
 				putchar((i % 10) + '0');
 
 				if (j == 98 && i == 99)
-				{	
+				{
 					continue;
 				}
 				putchar(',');
