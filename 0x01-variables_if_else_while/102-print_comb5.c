@@ -7,33 +7,33 @@
   */
 int main(void)
 {
-        int j, i;
+	int j, i;
 
-        j = i = '0';
+	j = i = '0';
 
-        for (j = 0; j <= 98; j++)
-        {
-                for (i = 0; i <= 99; i++)
-                {
+	for (j = 0; j <= 98; j++)
+	{
+		for (i = 0; i <= 99; i++)
+		{
 			if (j < i && j != i)
 			{
-                        	putchar((j / 10) + '0');
-                        	putchar((j % 10) + '0');
-                        	putchar(' ');
-                        	putchar((i / 10) + '0');
-                        	putchar((i % 10) + '0');
+				putchar((j / 10) + '0');
+				putchar((j % 10) + '0');
+				putchar(' ');
+				putchar((i / 10) + '0');
+				putchar((i % 10) + '0');
 
-                        	if (j == 98 && i == 99)
-                        	{	
+				if (j == 98 && i == 99)
+				{	
 					continue;
 				}
 				putchar(',');
 				putchar(' ');
 			}
-                }
-        }
+		}
+	}
 
-        putchar('\n');
+	putchar('\n');
 
-        return (0);
+	return (0);
 }
