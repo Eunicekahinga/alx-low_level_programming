@@ -2,15 +2,21 @@
 #include <stdio.h>
 
 /**
-  *main prints '_putchar'
+  *main - Entry point of the program
+  *
   *The function prints _putchar
+  *its followed by a new line
   *
-  *
-  *Return: Always (Success)
+  *Return: 0
   */
 int main(void)
 {
-	printf("_putchar\n");
+	char light[8] = "_putchar";
+	int j;
+
+	for (j = 0; j < 8; j++)
+		_putchar(light[j]);
+	_putchar('\n');
 
 	return (0);
 
