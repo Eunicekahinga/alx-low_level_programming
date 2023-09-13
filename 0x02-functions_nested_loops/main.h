@@ -7,7 +7,8 @@
   *parameters: char j
   *Return: Returns an integer value, character 'j' that was written
   *@j: The character to be written
-  *print_alphabet - Writes alphabets 'a' - 'z' in lower-case
+  *print_alphabet - Prints the lowercase alphabet from 'a' to 'z'
+  * followed by a newline.
   *followed by a new line
   */
 
