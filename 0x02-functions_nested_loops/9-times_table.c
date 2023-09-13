@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "main.n"
+#include "main.h"
 /**
  * times_table - Check description for the type
  * Description: Prints 9 times the time table
