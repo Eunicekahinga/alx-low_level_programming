@@ -1,39 +1,39 @@
 #include <stdio.h>
-
+#define LARGEST 10000000000
 /**
- * main - Prints the first 98 Fibonacci numbers using custom arithmetic
+ * main - Prints the first 98 fibonacci numbers
+ * Description: Find and print the first 98 fibonacci
+ * numbers starting with 1 and 2.
  *
  * Return: No return
  */
 int main(void)
 {
-	int i;
-	unsigned long j = 1, k = 2;
-	unsigned long carry = 0;
+	unsigned long int fr1 = 0, bk1 = 1, fr2 = 0, bk2 = 2;
+	unsigned long int holda, holdb, holdc;
+	int count;
 
-	printf("%lu, %lu", j, k);
-
-	for (i = 2; i < 98; i++)
+	printf("%lu, %lu, ", bk1, bk2);
+	for (count = 2; count < 98; count++)
 	{
-		unsigned long temp = j + k + carry;
-
-	if (temp >= 10000000000UL)
-	{
-		carry = temp / 10000000000UL;
-		temp %= 10000000000UL;
+		if (bk1 + bk2 > LARGEST || fr2 > 0 || fr1 > 0)
+		{
+			holda = (bk1 + bk2) / LARGEST;
+			holdb = (bk1 + bk2) % LARGEST;
+			holdc = fr1 + fr2 + holda;
+			fr1 = fr2, fr2 = holdc;
+			bk1 = bk2, bk2 = holdb;
+			printf("%lu%010lu", fr2, bk2);
+		}
+		else
+		{
+			holdb = bk1 + bk2;
+			bk1 = bk2, bk2 = holdb;
+			printf("%lu", bk2);
+		}
+		if (count != 97)
+			printf(", ");
 	}
-	else
-	{
-		carry = 0;
-	}
-
-	j = k;
-	k = temp;
-
-	printf(", %010lu", k);
-	}
-
 	printf("\n");
-
 	return (0);
 }
