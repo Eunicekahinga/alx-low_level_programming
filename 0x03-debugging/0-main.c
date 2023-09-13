@@ -1,11 +1,7 @@
-#include <stdio.h>
 #include "main.h"
 
 /**
- *main - prints whether a number is positive or negative
- *
- *positive_or_negative - it checks whether i is
- *positive or negative
+ *main - tests function that prints if integer is positive or negative
  *Return: 0
  *
  */
