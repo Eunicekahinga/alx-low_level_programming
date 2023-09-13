@@ -4,10 +4,10 @@
   *main - Entry point of the program
   *print_alphabet - Prints the lowercase alphabet from 'a' to 'z'
   *followed by a new line
-  *print_alphabet - Print 'a' - 'z'
+  *print_alphabet(void) - prints alphabets 'a' - 'z'
   * Return: Always 0.
   */
-void print_alphabet(void);
+void print_alphabet(void)
 
 int main(void)
 {

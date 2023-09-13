@@ -7,10 +7,12 @@
   *parameters: char j
   *Return: Returns an integer value, character 'j' that was written
   *@j: The character to be written
-  *Function prototype for _putchar
+  *print_alphabet - Writes alphabets 'a' - 'z' in lower-case
+  *followed by a new line
   */
 
 int _putchar(char j);
+void print_alphabet(void);
 
 #endif
 
