@@ -9,7 +9,7 @@
   */
 int main(void)
 {
-	int m, sum = o;
+	int m, sum = 0;
 
 	while (m < 1024)
 	{
