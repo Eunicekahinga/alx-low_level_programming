@@ -2,9 +2,9 @@
 
 /**
  * print_most_numbers - print numbers 0-9
- * exclude 2 and 4
+ * Description: exclude 2 and 4 
  *@i: The character to be printed
- * Return: 0
+ * Return: numbers 0-9 except 2&4
  *
  */
 
