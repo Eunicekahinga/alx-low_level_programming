@@ -1,11 +1,11 @@
+#include <stdio.h>
 #include "main.h"
 
 /**
  * print_most_numbers - print numbers 0-9
- * Description: exclude 2 and 4 
- *@i: The character to be printed
+ * Description: exclude 2 and 4
+ * followed by new line 
  * Return: numbers 0-9 except 2&4
- *
  */
 
 void print_most_numbers(void)
