@@ -11,15 +11,25 @@
 
 char *cap_string(char *p)
 {
-	int a = 0;
+	int a = 0, i;
+	int ascspc = 13;
+	char spc[] = {32, '\n', '\t', 44, ';', 46, '?', '!', '"', '(', ')', '{', '}'};
 
 	while (p[a])
 	{
-		if (p[a] >= 'A' && p[a] <= 'Z')
+		i = 0;
+
+		while (i < ascspc)
 		{
-			p[a] += 32;
+			if ((a == 0 || p[a - 1] == spc[i]) && (p[a] >= 'a' && p[a] <= 'z'))
+			{
+				p[a] -= 32;
+			}
+			i++;
 		}
+
 		a++;
 	}
+
 	return (p);
 }
