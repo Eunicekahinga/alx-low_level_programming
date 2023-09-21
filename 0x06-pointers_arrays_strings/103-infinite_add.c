@@ -12,7 +12,7 @@
 
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int i, len1,len2, largest, index = 0, sum, carry = 0;
+	int i, len1, len2, largest, index = 0, sum, carry = 0;
 	char temp;
 
 	len1 = _strlen(n1);
