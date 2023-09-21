@@ -4,6 +4,7 @@
 /**
  * string_toupper - changes all lowercase letters
  * to uppercase.
+ * @p: the string to be converted
  *
  * Return: Success
  */
