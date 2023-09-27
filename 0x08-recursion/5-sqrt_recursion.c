@@ -25,6 +25,13 @@ int _sqrt_recursive(int n, int i)
 		return (_sqrt_recursive(n, i + 1));
 	}
 }
+/**
+ * _sqrt_recursion - Returns the square
+ * root of a number
+ * @n: the number
+ * Return: the square root.
+ */
+
 int _sqrt_recursion(int n)
 {
 	if (n < 0)
