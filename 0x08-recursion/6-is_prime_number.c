@@ -35,6 +35,9 @@ int is_prime_recursive(int n, int k)
 }
 /**
  * is_prime_number - checks whether number is prime
+ * @n: the number
+ * Return: 1 if prime 0 if not
+ *
  */
 
 int is_prime_number(int n)
