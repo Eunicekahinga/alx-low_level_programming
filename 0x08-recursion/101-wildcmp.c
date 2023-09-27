@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * wildcmp_recursive - checks if strings are identical
+ * wildcmp - checks if strings are identical
  * @s1: the first string
  * @s2: the second string
  * Return: true or false
