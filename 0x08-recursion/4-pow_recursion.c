@@ -1,0 +1,26 @@
+#include "main.h"
+
+
+/**
+ * _pow_recursion - returns a number raised o
+ * another number
+ * @x: the number
+ * @y: the  number power
+ * Return: number raised to the power
+ * or -1 if less than
+ */
+
+int _pow_recursion(int x, int y)
+{
+	if (y < 0)
+	{
+		return (-1);
+	}
+
+	if (y == 0)
+	{
+		return (1);
+	}
+
+	return (x * _pow_recursion(x, y - 1));
+}
