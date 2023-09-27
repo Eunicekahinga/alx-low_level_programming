@@ -12,5 +12,8 @@ int _pow_recursion(int x, int y);
 int _sqrt_recursion(int n);
 int is_prime_number(int n);
 int _sqrt_recursive(int n, int i);
+int is_palindrome(char *s);
+int wildcmp(char *s1, char *s2);
+int is_palindrome_recursive(char *s, int a, int b);
 
 #endif /*MAIN_H */
