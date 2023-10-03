@@ -46,7 +46,7 @@ int **alloc_grid(int width, int height)
 /**
  * free_grid - frees memory
  * @grid: the array
- * @height the height of array
+ * @height: the height of array
  * Return: void
  *
  */
