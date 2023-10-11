@@ -11,10 +11,17 @@ void print_opcodes(unsigned char *main_start, int numBytes)
 {
 	int i;
 
-	for (i = 0; i < numBytes; i++)
-		printf("%02hhx ", main_start[i]);
-
-	printf("\n");
+	if (numBytes > 0)
+	{
+		for (i = 0; i < numBytes; i++)
+		{
+			printf("%02hhx", main_start[i]);
+			if (i < numBytes - 1)
+				printf(" ");
+			else
+				printf("\n");
+		}
+	}
 }
 
 /**
@@ -41,5 +48,6 @@ int main(int argc, char *argv[])
 	}
 
 	print_opcodes((unsigned char *)main, numBytes);
+
 	return (0);
 }
