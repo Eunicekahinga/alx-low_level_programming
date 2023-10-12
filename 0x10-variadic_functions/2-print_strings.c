@@ -4,7 +4,7 @@
 /**
  * print_strings - it prints string
  * @separator: the separators of the strings
- * @n the number of strings passed
+ * @n: the number of strings passed
  * Return: the strings else nil if NULL
  *
  */
