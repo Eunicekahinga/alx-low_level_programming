@@ -4,7 +4,7 @@
 #include <string.h>
 
 /**
- * add_node - adds elements in a linked
+ * add_node_end - adds elements in a linked
  * list and return their new address
  * @head: pointer to the first linked list
  * @str: the first element
@@ -12,9 +12,9 @@
  * Return: the count of the element
  */
 
-list_t *add_node(list_t **head, const char *str)
+list_t *add_node_end(list_t **head, const char *str)
 {
-	list_t *nextNode;
+	list_t *nextNode, *h;
 
 	if (str == NULL)
 		return (NULL);
@@ -31,12 +31,23 @@ list_t *add_node(list_t **head, const char *str)
 		return (NULL);
 	}
 
-	nextNode->str = strdup(str);
 	nextNode->len = _stringLength(str);
-	nextNode->next = *head;
-	*head = nextNode;
+	nextNode->next = NULL;
 
+	if (*head == NULL)
+	{
+		*head = nextNode;
+		return (nextNode);
+	}
+
+	h = *head;
+
+	while (h->next != NULL)
+		h = h->next;
+
+	h->next = nextNode;
 	return (nextNode);
+
 }
 
 /**
