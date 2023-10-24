@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * insert_nodeint_at_index - the function inserts a node 
+ * insert_nodeint_at_index - the function inserts a node
  * at the given index
  * @head: the pointer to the head node
  * @n: the data
