@@ -2,7 +2,7 @@
 #include <stddef.h>
 
 /**
- * binary_to_unit- function to convert binary numbers
+ * binary_to_uint- function to convert binary numbers
  * to an unsigned int
  *@b: pointer to strings 0 and 1 chars
  *Return: Converted number else 0
