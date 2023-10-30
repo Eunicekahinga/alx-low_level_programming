@@ -22,13 +22,17 @@ int create_file(const char *filename, char *text_content)
 	if (file == -1)
 		return (-1);
 
-	if (text_content != NULL)
+	if (text_content == NULL)
 	{
-		while (text_content[length] != '\0')
-			length++;
-
-		written = write(file, text_content, length);
+		close(file);
+		return (1);
 	}
+
+	while (text_content[length] != '\0')
+		length++;
+
+	written = write(file, text_content, length);
+
 	if (close(file) == -1 || length != written)
 		return (-1);
 	return (1);
