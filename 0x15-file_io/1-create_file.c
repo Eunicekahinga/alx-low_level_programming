@@ -3,6 +3,12 @@
 #include <fcntl.h>
 #include <stdlib.h>
 
+/**
+ * create_file - creates a file
+ * @filename: the name of file
+ * @text_content: the content of file
+ * Return: 1 on success -1 on failure
+ */
 
 int create_file(const char *filename, char *text_content)
 {
@@ -28,5 +34,7 @@ int create_file(const char *filename, char *text_content)
 		}
 	}
 	close(file);
+	if (close(file) == -1 || length != written)
+		return (-1);
 	return (1);
 }
