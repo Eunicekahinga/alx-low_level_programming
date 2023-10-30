@@ -2,6 +2,7 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <stdlib.h>
+#include <sys/stat.h>
 
 /**
  * create_file - creates a file
@@ -12,7 +13,7 @@
 
 int create_file(const char *filename, char *text_content)
 {
-	int file, written, length;
+	int file, written, length = 0;
 
 	if (filename == NULL)
 		return (-1);
