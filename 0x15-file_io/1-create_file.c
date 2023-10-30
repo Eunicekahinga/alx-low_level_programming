@@ -28,13 +28,7 @@ int create_file(const char *filename, char *text_content)
 			length++;
 
 		written = write(file, text_content, length);
-		if (written == -1)
-		{
-			close(file);
-			return (-1);
-		}
 	}
-	close(file);
 	if (close(file) == -1 || length != written)
 		return (-1);
 	return (1);
