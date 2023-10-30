@@ -27,11 +27,14 @@ int append_text_to_file(const char *filename, char *text_content)
 		close(file);
 		return (1);
 	}
+	if (text_content != NULL)
+	{
 
-	while (text_content[length] != '\0')
-		length++;
+		while (text_content[length] != '\0')
+			length++;
 
-	appended = write(file, text_content, length);
+		appended = write(file, text_content, length);
+	}
 
 	if (appended == -1)
 		return (-1);
@@ -39,5 +42,5 @@ int append_text_to_file(const char *filename, char *text_content)
 	if (close(file) == -1 || length != appended)
 		return (-1);
 
-	return (appended);
+	return (1);
 }
