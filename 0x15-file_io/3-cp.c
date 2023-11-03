@@ -22,6 +22,9 @@ int main(int argc, char *argv[])
 	int file_from, file_to, bytes_read, bytes_written;
 	char buffer[BUF_SIZE];
 
+	if (buffer == NULL)
+	return (-1);
+
 	if (argc != 3)
 	{
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
