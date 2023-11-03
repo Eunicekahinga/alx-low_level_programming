@@ -4,6 +4,7 @@
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/stat.h>
+#include <errno.h>
 
 #define BUF_SIZE 1024
 #define PERMISSIONS (S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH)
@@ -20,7 +21,6 @@ int main(int argc, char *argv[])
 {
 	int file_from, file_to, bytes_read, bytes_written;
 	char buffer[BUF_SIZE];
-	struct stat st;
 
 	if (argc != 3)
 	{
@@ -38,8 +38,15 @@ int main(int argc, char *argv[])
 	file_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, PERMISSIONS);
 	if (file_to == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", argv[2]);
-		return (99);
+		if (errno == EEXIST)
+			file_to = open(argv[2], O_WRONLY | O_TRUNC);
+
+		if (file_to == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", argv[2]);
+			close(file_from);
+			return (99);
+		}
 	}
 	while ((bytes_read = read(file_from, buffer, BUF_SIZE)) > 0)
 	{
@@ -47,12 +54,16 @@ int main(int argc, char *argv[])
 		if (bytes_written == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", argv[2]);
+			close(file_from);
+			close(file_to);
 			return (99);
 		}
 	}
 	if (bytes_read == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+		close(file_from);
+		close(file_to);
 		return (98);
 	}
 	if (close(file_from) == -1)
@@ -65,13 +76,5 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_to);
 		return (100);
 	}
-	if (fstat(file_to, &st) == 0)
-	{
-		if ((st.st_mode & PERMISSIONS) == PERMISSIONS)
-		{
-			return (0);
-		}
-	}
-	dprintf(STDERR_FILENO, "Error: Unable to change permissions\n");
-	return (99);
+	return (0);
 }
